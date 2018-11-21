@@ -107,9 +107,9 @@ public class StartCountdown extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 if(millisUntilFinished / 60000 >= 1){
-                    countdownTimer.setText("This will take about " + ((millisUntilFinished / 60000) + 1) + " minutes");
+                    countdownTimer.setText("This will take about " + ((millisUntilFinished / 60000) + 1) + " minutes.");
                 } else if(millisUntilFinished / 60000 < 1){
-                    countdownTimer.setText("This will take about " + ((millisUntilFinished / 60000) + 1) + " minute");
+                    countdownTimer.setText("This will take about " + ((millisUntilFinished / 60000) + 1) + " minute.");
                 }
 
             }
