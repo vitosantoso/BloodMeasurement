@@ -2,12 +2,13 @@
     <string name="app_name">BloodMeasurement</string>
     <string name="percentage">0%</string>
     <string name="subTitle">MEASURE BLOOD GLUCOSE</string>
-    <string name="description">It is best measured without any
-    food or beverage intake other than water in the last 8 hours.</string>
-    <string name="description2">Tap \"Measure Now\" and keep still for 5 minutes.</string>
+    <string name="description"> It is best measured without any
+    food\n or beverage intake other than\n water in the last 8 hours.</string>
+    <string name="description2">Tap \"Measure Now\" and keep still\n for 3 minutes.</string>
     <string name="buttonStart">Next</string>
     <string name="whatBlood">What is Blood Glucose?</string>
     <string name="subTitle2">READING...</string>
-    <string name="description3">Please remain still while we read your heart rate data.</string>
+    <string name="description3">Please remain still while we read\n your heart rate data.</string>
     <string name="buttonCancel">Cancel Reading</string>
+    <string name="countdownTimer"></string>
 </resources>

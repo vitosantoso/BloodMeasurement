@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class StartCountdown extends AppCompatActivity {
     ProgressBar mProgress;
     Boolean keepRunning;
     long timer;
+    TextView countdownTimer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,10 @@ public class StartCountdown extends AppCompatActivity {
         mProgress.setProgressDrawable(drawable);
 
         percentage = (TextView) findViewById(R.id.percentage);
+        countdownTimer = (TextView) findViewById(R.id.countdownTimer);
 
         runThread();
+        startCountdown();
 
         /*
         if(keepRunning){
@@ -96,5 +100,25 @@ public class StartCountdown extends AppCompatActivity {
         percentage.setText("0%");
         mProgress.setProgress(0);
         keepRunning = false;
+    }
+
+    private void startCountdown(){
+        new CountDownTimer(180000, 1000){
+            @Override
+            public void onTick(long millisUntilFinished) {
+                if(millisUntilFinished / 60000 >= 1){
+                    countdownTimer.setText("This will take about " + ((millisUntilFinished / 60000) + 1) + " minutes");
+                } else if(millisUntilFinished / 60000 < 1){
+                    countdownTimer.setText("This will take about " + ((millisUntilFinished / 60000) + 1) + " minute");
+                }
+
+            }
+
+            @Override
+            public void onFinish() {
+                countdownTimer.setText("Done!");
+                resetButton.setText("Done!");
+            }
+        }.start();
     }
 }
